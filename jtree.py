@@ -26,18 +26,8 @@ def edge(s,t):
 	if edges.has_key((s,t)): return edges[s,t]
 	elif edges.has_key((t,s)): return edges[t,s]
 
-def construct_tree(node,parent = None):
-	global edges,vertices
-	children = {}
-	for i in vertices:
-		if i == node or i == parent: continue
-		elif edge(node,i) != None:
-			children[i] = construct_tree(i, parent=node)
-	return children
-
 def sum_product(root):
 	global vertices
-	#root_node = construct_tree(root)
 	messages  = {}
 	for e in neighbours(root):
 		collect(messages,root,e)
