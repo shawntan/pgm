@@ -1,5 +1,9 @@
 import numpy as np
+"""
+Implements the sum-product algorithm for belief propagation in _trees_
 
+Does not verify if given graph is a tree.
+"""
 vertices = {
 		1 : np.array([0.7,0.3]),
 		3 : np.array([0.7,0.3]),
